@@ -16,6 +16,6 @@ class LogToFile implements MaviExceptionObserver{
 	public function notify(string $message, int $code, string $url): void {
 
 		$exception = 'CODE: ' . $code . ' MESSAGE: ' . $message . '; URL: ' . $url . PHP_EOL;
-		print_r(file_put_contents(self::LOG_FILE, $exception, FILE_APPEND));
+		file_put_contents(self::LOG_FILE, $exception, FILE_APPEND);
 	}
 }
